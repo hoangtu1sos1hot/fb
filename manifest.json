@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "2TOOL - Auto Kết Bạn Địa Phương trên facebook",
+  "version": "7.0",
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "description": "Hỗ trợ kết bạn TÍNH TỰ NHIÊN CAO theo địa phương, sở thích, giới tính, nhân khẩu học...(trước là HiFB, HiTOOL))",
+  "icons": {
+    "16": "img/auto-ket-ban-dia-phuong-logo-icon.png",
+    "48": "img/auto-ket-ban-dia-phuong-logo-icon.png",
+    "128": "img/auto-ket-ban-dia-phuong-logo-icon.png"
+  },
+  "author": "https://hiep.hitool.app",
+  "content_scripts": [
+    {
+      "matches": ["*://*.facebook.com/*"],
+      "run_at": "document_start",
+      "css": ["lib/style.css"],
+      "js": ["lib/jquery.min.js", "lib/firebase.js", "lib/global-variable.js", "lib/functions.js", "lib/app.js"],
+      "all_frames": false
+    }
+  ],
+  "options_page": "options.html",
+  "action": {
+    "default_icon": "img/auto-ket-ban-dia-phuong-logo-icon.png",
+    "default_title": "2TOOL - Auto Kết Bạn Địa Phương trên facebook",
+    "default_popup": "options.html"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.facebook.com/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "img/auto-ket-ban-dia-phuong-logo-full.png",
+        "img/auto-ket-ban-dia-phuong-logo-icon.png",
+        "img/searching.svg",
+        "img/hidigital-logo.png",
+        "img/notification.jpg",
+        "img/loading.gif",
+        "img/support.png",
+        "img/upgrade.png"
+      ],
+      "matches": ["*://*.facebook.com/*"]
+    }
+  ]
+}
